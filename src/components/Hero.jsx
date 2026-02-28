@@ -32,6 +32,7 @@ function Hero() {
               onClick={handleMiniVdClick}
               className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
             >
+              
               <video
                 ref={nextVideoRef}
                 src={getVideoSrc(currentIndex + 1)}
