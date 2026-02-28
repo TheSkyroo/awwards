@@ -40,6 +40,7 @@ function Hero() {
                 id="current-video"
                 className="size-64 origin-center scale-150 object-cover object-center"
                 onLoadedData={handleVideoLoad}
+              
               />
             </div>
           </div>
