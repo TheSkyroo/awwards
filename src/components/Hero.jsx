@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-
 function Hero() {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
