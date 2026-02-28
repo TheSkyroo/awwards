@@ -5,7 +5,6 @@ function Hero() {
   const [hasClicked, setHasClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
-
   const totalVideos = 4;
   const nextVideoRef = useRef(null);
 
