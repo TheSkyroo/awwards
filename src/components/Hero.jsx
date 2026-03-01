@@ -7,7 +7,6 @@ function Hero() {
   const [loadedVideos, setLoadedVideos] = useState(0);
   const totalVideos = 4;
   const nextVideoRef = useRef(null);
-
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
   };
