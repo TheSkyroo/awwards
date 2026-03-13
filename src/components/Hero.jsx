@@ -11,7 +11,7 @@ function Hero() {
     setLoadedVideos((prev) => prev + 1);
   };
 
-  const getVideoSrc = (index) => `/public/videos/hero-${index}.mp4`;
+  const getVideoSrc = (index) => `/videos/hero-${index}.mp4`;
 
   const handleMiniVdClick = () => {
     setHasClicked(true);
