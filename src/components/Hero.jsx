@@ -1,11 +1,13 @@
 import { useState, useRef } from "react";
+import Button from "./Button";
+import { TiLocationArrow } from "react-icons/ti";
 
 function Hero() {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
-  const totalVideos = 3;
+  const totalVideos = 4;
   const nextVideoRef = useRef(null);
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
@@ -72,6 +74,12 @@ function Hero() {
             <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
               Enter the Metagame Layer <br /> Unleash the Play Economy
             </p>
+            <Button
+              id="watch-trailer"
+              title="Watch Trailer"
+              leftIcon={<TiLocationArrow />}
+              containerClass="flex-center !bg-yellow-300 gap-1"
+            />
           </div>
         </div>
       </div>
