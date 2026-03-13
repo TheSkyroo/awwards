@@ -7,17 +7,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        zentry: ['zentry', 'sans-serif'],
-        general: ['general', 'sans-serif'],
-        'circular-web': ['circular-web', 'sans-serif'],
-        'robert-medium': ['robert-medium', 'sans-serif'],
-        'robert-regular': ['robert-regular', 'sans-serif'],
+        zentry: ['"zentry"', 'sans-serif'],
+        general: ['"general"', 'sans-serif'],
+        'circular-web': ['"circular-web"', 'sans-serif'],
+        'robert-medium': ['"robert-medium"', 'sans-serif'],
+        'robert-regular': ['"robert-regular"', 'sans-serif'],
       },
       colors: {
         blue: {
           50: '#DFDFF0',
           75: '#dfdff2',
-          100: '#fof2fa',
+          100: '#f0f2fa',
           200: '#010101',
           300: '#4fb7dd'
         },
@@ -26,7 +26,7 @@ export default {
         },
         yellow: {
           100: '#8e983f',
-          300: 'edff66'
+          300: '#edff66'
         }
       }
     },
