@@ -31,9 +31,9 @@ function Hero() {
     }
   }, [loadedVideos]);
 
-  // Safety net: hide loader after 3s even if videos never fire onLoadedData (mobile)
+  // Safety net: hide loader after 1s even if videos never fire onLoadedData (iOS Safari)
   useEffect(() => {
-    const timeout = setTimeout(() => setIsLoading(false), 3000);
+    const timeout = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -135,6 +135,7 @@ function Hero() {
             loop
             muted
             playsInline
+            preload="auto"
             className="absolute left-0 top-0 size-full object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
