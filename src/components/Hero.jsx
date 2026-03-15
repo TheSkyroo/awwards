@@ -26,10 +26,16 @@ function Hero() {
     setCurrentIndex(upcomingVideoIndex);
   };
   useEffect(() => {
-    if (loadedVideos === totalVideos - 1) {
+    if (loadedVideos >= 1) {
       setIsLoading(false);
     }
   }, [loadedVideos]);
+
+  // Safety net: hide loader after 3s even if videos never fire onLoadedData (mobile)
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsLoading(false), 3000);
+    return () => clearTimeout(timeout);
+  }, []);
 
   useGSAP(
     () => {
@@ -100,9 +106,9 @@ function Hero() {
             >
               <video
                 src={getVideoSrc(upcomingVideoIndex)}
-                // Added autoPlay here so the preview moves
                 loop
                 muted
+                playsInline
                 id="current-video"
                 className="size-64 origin-center scale-150 object-cover object-center"
                 onLoadedData={handleVideoLoad}
@@ -112,10 +118,11 @@ function Hero() {
 
           {/* 2. Hidden Next Video (usually used for the GSAP expansion animation) */}
           <video
-            ref={nextVideoRef} // Ref kept here for animation purposes
+            ref={nextVideoRef}
             src={getVideoSrc(currentIndex)}
             loop
             muted
+            playsInline
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={handleVideoLoad}
@@ -123,10 +130,11 @@ function Hero() {
 
           {/* 3. Main Background Video */}
           <video
-            src={getVideoSrc(currentIndex)} // Fixed: Removed the buggy ternary operator
+            src={getVideoSrc(currentIndex)}
             autoPlay
             loop
             muted
+            playsInline
             className="absolute left-0 top-0 size-full object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
