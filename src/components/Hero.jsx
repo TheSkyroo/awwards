@@ -99,7 +99,7 @@ function Hero() {
       >
         <div>
           {/* 1. Mini Video Preview */}
-          <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg hidden sm:block">
+          <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
             <div
               onClick={handleMiniVdClick}
               className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
@@ -109,6 +109,8 @@ function Hero() {
                 loop
                 muted
                 playsInline
+                webkit-playsinline="true"
+                controls={false}
                 id="current-video"
                 className="size-64 origin-center scale-150 object-cover object-center"
                 onLoadedData={handleVideoLoad}
@@ -123,6 +125,8 @@ function Hero() {
             loop
             muted
             playsInline
+            webkit-playsinline="true"
+            controls={false}
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={handleVideoLoad}
@@ -135,6 +139,8 @@ function Hero() {
             loop
             muted
             playsInline
+            webkit-playsinline="true"
+            controls={false}
             preload="auto"
             className="absolute left-0 top-0 size-full object-cover object-center"
             onLoadedData={handleVideoLoad}
